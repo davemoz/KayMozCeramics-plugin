@@ -78,10 +78,6 @@ class KayMozCeramics_Nav_Walker extends Walker_Nav_Menu {
 				$item_output .= '<a' . $attributes . '><i class="fab fa-snapchat-ghost">';
 				$item_output .= '</i></a>';
 				$item_output .= $args->after;
-			} elseif (strpos($item->url, 'plus.google') !== false) {
-				$item_output .= '<a' . $attributes . '><i class="fab fa-google-plus-g">';
-				$item_output .= '</i></a>';
-				$item_output .= $args->after;
 			} elseif (strpos($item->url, 'youtube') !== false) {
 				$item_output .= '<a' . $attributes . '><i class="fab fa-youtube">';
 				$item_output .= '</i></a>';
