@@ -90,6 +90,10 @@ class KayMozCeramics_Nav_Walker extends Walker_Nav_Menu {
 				$item_output .= '<a' . $attributes . '><i class="fab fa-vimeo-v">';
 				$item_output .= '</i></a>';
 				$item_output .= $args->after;
+			} elseif (strpos($item->title, 'account') !== false) {
+				$item_output .= '<a' . $attributes . '><i class="fas fa-user">';
+				$item_output .= '</i></a>';
+				$item_output .= $args->after;
 			} elseif (stripos($item->title, 'cart') !== false) {
 				$item_output .= '<a' . $attributes . ' class="menu-item-cart"><i class="fas fa-shopping-cart">';
 				$item_output .= '</i>';
