@@ -91,7 +91,7 @@ class KayMozCeramics_Nav_Walker extends Walker_Nav_Menu {
 				$item_output .= '</i></a>';
 				$item_output .= $args->after;
 			} elseif (strpos($item->title, 'account') !== false) {
-				$item_output .= '<a' . $attributes . '><i class="fas fa-user">';
+				$item_output .= '<a' . $attributes . ' class="menu-item-account"><i class="fas fa-user">';
 				$item_output .= '</i></a>';
 				$item_output .= $args->after;
 			} elseif (stripos($item->title, 'cart') !== false) {
