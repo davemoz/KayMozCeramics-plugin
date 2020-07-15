@@ -54,55 +54,55 @@ class KayMozCeramics_Nav_Walker extends Walker_Nav_Menu {
 		$item_output = $args->before;
 		global $woocommerce;
 		$cart_contents_count = $woocommerce->cart->cart_contents_count;
-		if (strpos($item->url, 'facebook') !== false) {
+		if (stripos($item->url, 'facebook') !== false) {
 			$item_output .= '<a' . $attributes . '><i class="fab fa-facebook-f"></i>';
 			$item_output .= '</a>';
 			$item_output .= $args->after;
-		} elseif (strpos($item->url, 'twitter') !== false) {
-				$item_output .= '<a' . $attributes . '><i class="fab fa-twitter">';
-				$item_output .= '</i></a>';
-				$item_output .= $args->after;
-			} elseif (strpos($item->url, 'instagram') !== false) {
-				$item_output .= '<a' . $attributes . '><i class="fab fa-instagram">';
-				$item_output .= '</i></a>';
-				$item_output .= $args->after;
-			} elseif (strpos($item->url, 'pinterest') !== false) {
-				$item_output .= '<a' . $attributes . '><i class="fab fa-pinterest-p">';
-				$item_output .= '</i></a>';
-				$item_output .= $args->after;
-			} elseif (strpos($item->url, 'linkedin') !== false) {
-				$item_output .= '<a' . $attributes . '><i class="fab fa-linkedin-in">';
-				$item_output .= '</i></a>';
-				$item_output .= $args->after;
-			} elseif (strpos($item->url, 'snapchat') !== false) {
-				$item_output .= '<a' . $attributes . '><i class="fab fa-snapchat-ghost">';
-				$item_output .= '</i></a>';
-				$item_output .= $args->after;
-			} elseif (strpos($item->url, 'youtube') !== false) {
-				$item_output .= '<a' . $attributes . '><i class="fab fa-youtube">';
-				$item_output .= '</i></a>';
-				$item_output .= $args->after;
-			} elseif (strpos($item->url, 'vimeo') !== false) {
-				$item_output .= '<a' . $attributes . '><i class="fab fa-vimeo-v">';
-				$item_output .= '</i></a>';
-				$item_output .= $args->after;
-			} elseif (strpos($item->title, 'account') !== false) {
-				$item_output .= '<a' . $attributes . ' class="menu-item-account"><i class="fas fa-user">';
-				$item_output .= '</i></a>';
-				$item_output .= $args->after;
-			} elseif (strpos($item->title, 'cart') !== false) {
-				$item_output .= '<a' . $attributes . ' class="menu-item-cart"><i class="fas fa-shopping-cart">';
-				$item_output .= '</i>';
-				$item_output .= $cart_contents_count == 0 ? '</a>' : '<span id="cart-count">'. $cart_contents_count .'</span></a>';
-				$item_output .= $args->after;
-			} else {
-				$item_output .= '<a' . $attributes . '>' . $title;
-				$item_output .= '</a>';
-				$item_output .= $args->after;
-			}
-			$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+		} elseif (stripos($item->url, 'twitter') !== false) {
+			$item_output .= '<a' . $attributes . '><i class="fab fa-twitter">';
+			$item_output .= '</i></a>';
+			$item_output .= $args->after;
+		} elseif (stripos($item->url, 'instagram') !== false) {
+			$item_output .= '<a' . $attributes . '><i class="fab fa-instagram">';
+			$item_output .= '</i></a>';
+			$item_output .= $args->after;
+		} elseif (stripos($item->url, 'pinterest') !== false) {
+			$item_output .= '<a' . $attributes . '><i class="fab fa-pinterest-p">';
+			$item_output .= '</i></a>';
+			$item_output .= $args->after;
+		} elseif (stripos($item->url, 'linkedin') !== false) {
+			$item_output .= '<a' . $attributes . '><i class="fab fa-linkedin-in">';
+			$item_output .= '</i></a>';
+			$item_output .= $args->after;
+		} elseif (stripos($item->url, 'snapchat') !== false) {
+			$item_output .= '<a' . $attributes . '><i class="fab fa-snapchat-ghost">';
+			$item_output .= '</i></a>';
+			$item_output .= $args->after;
+		} elseif (stripos($item->url, 'youtube') !== false) {
+			$item_output .= '<a' . $attributes . '><i class="fab fa-youtube">';
+			$item_output .= '</i></a>';
+			$item_output .= $args->after;
+		} elseif (stripos($item->url, 'vimeo') !== false) {
+			$item_output .= '<a' . $attributes . '><i class="fab fa-vimeo-v">';
+			$item_output .= '</i></a>';
+			$item_output .= $args->after;
+		} elseif (stripos($item->title, 'account') !== false) {
+			$item_output .= '<a' . $attributes . ' class="menu-item-account"><i class="fas fa-user">';
+			$item_output .= '</i></a>';
+			$item_output .= $args->after;
+		} elseif (stripos($item->title, 'cart') !== false) {
+			$item_output .= '<a' . $attributes . ' class="menu-item-cart"><i class="fas fa-shopping-cart">';
+			$item_output .= '</i>';
+			$item_output .= $cart_contents_count == 0 ? '</a>' : '<span id="cart-count">'. $cart_contents_count .'</span></a>';
+			$item_output .= $args->after;
+		} else {
+			$item_output .= '<a' . $attributes . '>' . $title;
+			$item_output .= '</a>';
+			$item_output .= $args->after;
 		}
-		function end_el(&$output, $item, $depth = 0, $args = array()) {
-			$output .= "\n";
-		}
+		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+	}
+	function end_el(&$output, $item, $depth = 0, $args = array()) {
+		$output .= "\n";
+	}
 }
